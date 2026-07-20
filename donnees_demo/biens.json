@@ -1,0 +1,68 @@
+[
+  {
+    "ref": "VAU-2026-114",
+    "entree_portefeuille": "2026-07-18",
+    "adresse": "12 allée des Cèdres, 92420 Vaucresson",
+    "type": "Maison",
+    "prix": 1245000,
+    "surface": 178,
+    "chambres": 4,
+    "terrain": 620,
+    "annonce": "Dans une allée privée au calme absolu, maison familiale de 178 m2 élevée sur sous-sol. Quatre chambres dont une suite parentale. Sejour double traversant ouvrant sur un jardin clos de 620 m2 sans vis-à-vis. Le fond du jardin donne directement sur le bois : le portillon ouvre sur les sentiers de la forêt de Fausses-Reposes. Cuisine des années 90 à rafraîchir. Toiture et facades refaites en 2021, chaudière récente, aucun gros œuvre à prévoir. Écoles et commerces a 8 minutes en voiture."
+  },
+  {
+    "ref": "GAR-2026-097",
+    "entree_portefeuille": "2026-07-15",
+    "adresse": "8 rue des Écoles, 92380 Garches",
+    "type": "Appartement",
+    "prix": 935000,
+    "surface": 92,
+    "chambres": 3,
+    "terrain": 0,
+    "annonce": "Bel appartement de 92 m2 au 4e etage avec ascenseur, très lumineux, exposé sud-ouest. Trois chambres, séjour avec balcon filant de 9 m2. Aucun vis-à-vis. L'école primaire Pasteur est à 3 minutes à pied et la gare de Garches-Marnes-la-Coquette à 7 minutes. Cave et parking en sous-sol. Copropriété bien tenue."
+  },
+  {
+    "ref": "SCL-2026-088",
+    "entree_portefeuille": "2026-07-12",
+    "adresse": "23 boulevard Sénard, 92210 Saint-Cloud",
+    "type": "Maison",
+    "prix": 1875000,
+    "surface": 240,
+    "chambres": 5,
+    "terrain": 900,
+    "annonce": "Rare meulière de 1912 entièrement préservée, 240 m2 sur trois niveaux. Parquets Versailles, moulures, cheminées d'origine, verrière. Jardin paysager de 900 m2 avec arbres centenaires et potager. Cinq chambres. Cave voûtée. Le charme de l'ancien avec un confort actualisé. Proche du parc de Saint-Cloud."
+  },
+  {
+    "ref": "VDA-2026-102",
+    "entree_portefeuille": "2026-07-16",
+    "adresse": "5 rue de Marnes, 92410 Ville-d'Avray",
+    "type": "Appartement",
+    "prix": 762000,
+    "surface": 68,
+    "chambres": 2,
+    "terrain": 0,
+    "annonce": "Dans une résidence de standing au calme, appartement de 68 m2 en dernier étage. Double séjour, deux chambres dont une transformable en bureau. Terrasse de 14 m2 plein sud, très lumineuse toute la journee. Rue résidentielle sans passage. Stationnement privé."
+  },
+  {
+    "ref": "COU-2026-071",
+    "entree_portefeuille": "2026-07-10",
+    "adresse": "41 rue Victor Hugo, 92400 Courbevoie",
+    "type": "Appartement",
+    "prix": 395000,
+    "surface": 38,
+    "chambres": 1,
+    "terrain": 0,
+    "annonce": "Deux pièces de 38 m2 en bon état, loué actuellement 1 380 euros charges comprises, bail en cours. Metro Louise Michel à 4 minutes à pied, gare de La Defense à deux stations. Copropriété saine, aucun travaux voté en assemblee. Idéal investisseur, rentabilité brute supérieure a 4 pour cent."
+  },
+  {
+    "ref": "GAR-2026-103",
+    "entree_portefeuille": "2026-07-17",
+    "adresse": "17 avenue du Général Leclerc, 92380 Garches",
+    "type": "Maison",
+    "prix": 1180000,
+    "surface": 165,
+    "chambres": 4,
+    "terrain": 380,
+    "annonce": "Maison de 165 m2 sur avenue passante, quatre chambres, jardin de 380 m2 exposé est. Beaux volumes, à moderniser entièrement : électricité, plomberie et isolation à reprendre. Prix en conséquence. Fort potentiel pour bricoleur ou investisseur."
+  }
+]
