@@ -69,10 +69,19 @@ def _appel_groq(modele, consigne, invite, timeout=90):
         "temperature": 0.2,
     }).encode("utf-8")
 
+    # Groq est derriere Cloudflare, qui bloque la signature par defaut de
+    # Python (erreur 403 code 1010). On se presente donc comme un client
+    # HTTP normal. C'est la seule raison d'etre de User-Agent et Accept.
     requete = urllib.request.Request(
         URL_GROQ, data=corps, method="POST",
-        headers={"Authorization": "Bearer " + cle,
-                 "Content-Type": "application/json"},
+        headers={
+            "Authorization": "Bearer " + cle,
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/124.0.0.0 Safari/537.36",
+        },
     )
     with urllib.request.urlopen(requete, timeout=timeout) as reponse:
         donnees = json.loads(reponse.read().decode("utf-8"))
