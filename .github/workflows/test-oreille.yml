@@ -1,0 +1,40 @@
+# Test de sante de l'oreille.
+#
+# Transcrit un echantillon audio reel commite dans le depot, et affiche le
+# resultat. Sert a valider la chaine vocale AVANT qu'un client ne l'utilise :
+# le premier vrai fichier audio ne doit pas etre celui du prospect.
+#
+# Declenchement manuel uniquement : aucun quota consomme sans demande.
+name: Test de l'oreille
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Transcrire l'echantillon
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          from oreille import transcrire, OreilleIndisponible
+          chemin = "echantillon_vocal.m4a"
+          print("Fichier :", chemin, round(os.path.getsize(chemin)/1024, 1), "Ko")
+          print("=" * 60)
+          try:
+              texte = transcrire(chemin)
+              print("TRANSCRIPTION :")
+              print(texte if texte.strip() else "(silence ou parole inaudible)")
+              print("=" * 60)
+              print("CHAINE VOCALE VALIDEE : Groq a repondu.")
+          except OreilleIndisponible as err:
+              print("ECHEC :", err)
+              raise
+          PY
