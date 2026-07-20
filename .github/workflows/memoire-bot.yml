@@ -29,6 +29,8 @@ jobs:
       # passent a l'IA. Rien n'est recalcule inutilement.
       - name: Lire les vocaux et confronter les mandats
         env:
+          FOURNISSEUR_IA: groq
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python memoire_acquereurs.py tout --seuil 70
 
