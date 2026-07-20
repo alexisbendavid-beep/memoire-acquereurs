@@ -109,16 +109,28 @@ def en_texte(html):
 # --------------------------------------------------------------------------- #
 # Reperage des annonces
 # --------------------------------------------------------------------------- #
-def urls_des_annonces(limite_pages=15):
-    """Parcourt la liste page par page jusqu'a ne plus rien decouvrir."""
+def urls_des_annonces(limite_pages=25):
+    """Parcourt la liste page par page jusqu'a ne plus rien decouvrir.
+
+    Deux pieges observes sur ce site, notes ici pour la prochaine fois :
+      - la pagination est dans le CHEMIN (/annonces/page2/), pas dans un
+        parametre. Un "&page=2" renvoie silencieusement la page 1, ce qui
+        donne un aspirateur qui a l'air de marcher mais ne ramene que 9
+        biens sur 59.
+      - le parametre "limit" est plafonne a 9 cote serveur : inutile de
+        demander tout d'un coup, il faut vraiment tourner les pages.
+    """
     trouvees = []
     connues = set()
     for page in range(1, limite_pages + 1):
-        url = LISTE + ("" if page == 1 else "&page=" + str(page))
+        url = (LISTE if page == 1
+               else SITE + "/annonces/page" + str(page) + "/?transaction=vente")
         html = lire(url)
         if not html:
             break
-        slugs = re.findall(r'href="[^"]*?/annonces/([a-z0-9][a-z0-9\-]{6,})/?"', html)
+        slugs = [s for s in re.findall(
+            r'href="[^"]*?/annonces/([a-z0-9][a-z0-9\-]{6,})/?"', html)
+            if not re.match(r"^page\d+$", s)]
         nouveaux = [s for s in dict.fromkeys(slugs) if s not in connues]
         if not nouveaux:
             break
