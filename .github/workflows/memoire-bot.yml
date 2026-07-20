@@ -1,0 +1,66 @@
+name: Memoire des acquereurs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: memoire-acquereurs
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les librairies Python
+        run: pip install -r requirements.txt
+
+      # Incremental : seuls les NOUVEAUX vocaux et les NOUVEAUX couples
+      # passent a l'IA. Rien n'est recalcule inutilement.
+      - name: Lire les vocaux et confronter les mandats
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python memoire_acquereurs.py tout --seuil 70
+
+      - name: Regenerer la demonstration
+        run: |
+          python generer_demo.py
+          python generer_pdf_raas.py
+          python envoyer_alerte.py --apercu
+
+      - name: Envoyer l'alerte par Gmail
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          SEUIL_ALERTE: "70"
+        run: python envoyer_alerte.py
+
+      - name: Sauvegarder la memoire dans le depot
+        run: |
+          git config user.name "memoire-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Memoire mise a jour [skip ci]"
+          git pull --rebase --autostash || true
+          git push
+
+      - name: Publier les resultats
+        uses: actions/upload-artifact@v4
+        with:
+          name: memoire-acquereurs
+          path: |
+            memoire_acquereurs.json
+            rapprochements.json
+            demo_raas.html
+            apercu_alerte_mail.html
+            Memoire_des_acquereurs_Agence_RG.pdf
