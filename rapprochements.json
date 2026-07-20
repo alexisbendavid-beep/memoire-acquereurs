@@ -8,7 +8,9 @@
     "preuve_annonce": "Le fond du jardin donne directement sur le bois : le portillon ouvre sur les sentiers de la forêt de Fausses-Reposes",
     "rappel_verbatim": "il voulait pouvoir sortir de chez lui et être dans les bois en cinq minutes à pied. Une lisière de forêt, c'est le mot qu'il a employé",
     "message_agent": "Rappelez Jean Vasseur. Le 12 allée des Cèdres à Vaucresson a un portillon qui ouvre sur la forêt de Fausses-Reposes. Il cherchait exactement ça en mars pour promener son labrador le matin. Budget, maison, 4 chambres : tout colle.",
-    "reserves": ["Cuisine des années 90 à rafraîchir, mais il avait dit qu'il la referait de toute façon"],
+    "reserves": [
+      "Cuisine des années 90 à rafraîchir, mais il avait dit qu'il la referait de toute façon"
+    ],
     "anciennete_besoin_jours": 128
   },
   {
@@ -56,7 +58,9 @@
     "preuve_annonce": "deux chambres dont une transformable en bureau. Terrasse de 14 m2 plein sud, très lumineuse toute la journée. Rue résidentielle sans passage",
     "rappel_verbatim": "il lui faut une pièce en plus avec de la lumière, elle ne peut pas travailler dans le noir, et un extérieur parce qu'elle ne veut plus descendre dans la rue",
     "message_agent": "Rappelez Sophie Marchand. Le 5 rue de Marnes à Ville-d'Avray est à 762 000, dans son budget. Une des deux chambres est transformable en bureau, terrasse de 14 m2 plein sud lumineuse toute la journée, et la rue est sans passage.",
-    "reserves": ["762 000 €, il ne reste que 18 000 € de marge sur son plafond"],
+    "reserves": [
+      "762 000 €, il ne reste que 18 000 € de marge sur son plafond"
+    ],
     "anciennete_besoin_jours": 70
   },
   {
@@ -68,7 +72,406 @@
     "preuve_annonce": "Maison sur avenue passante, à moderniser entièrement : électricité, plomberie et isolation à reprendre",
     "rappel_verbatim": "pas de gros travaux de structure, il n'a ni le temps ni l'envie. Ce qui compte c'est le calme et la verdure",
     "message_agent": "Ne pas proposer à Jean Vasseur. Un filtre classique aurait sorti ce bien : maison, 4 chambres, 1 180 000 € dans son budget. Mais l'avenue passante contredit sa recherche de calme et la rénovation complète est un rédhibitoire explicite.",
-    "reserves": ["Le filtre structuré de n'importe quel logiciel aurait proposé ce bien à tort"],
+    "reserves": [
+      "Le filtre structuré de n'importe quel logiciel aurait proposé ce bien à tort"
+    ],
     "anciennete_besoin_jours": 128
+  },
+  {
+    "score": 2,
+    "verdict": "Le bien ne correspond pas aux besoins essentiels de la famille Ricci (type, budget, localisation scolaire), malgré un point positif sur le critère de fin de vis‑à‑vis.",
+    "declencheur": "Fin du vis‑à‑vis du jardin",
+    "preuve_annonce": "Sejour double traversant ouvrant sur un jardin clos de 620 m2 sans vis-à-vis.",
+    "rappel_verbatim": "ils sont au rez-de-chaussee actuellement et ils en ont assez du vis-a-vis",
+    "message_agent": "Ce bien élimine le problème de vis‑à‑vis, mais il s'agit d'une maison à 1 245 000 €, hors du budget max de 950 000 € et ne correspond pas au type recherché (appartement 4 pièces, étage élevé). De plus, l'école la plus proche est à 8 minutes en voiture, pas à pied. À ne pas retenir.",
+    "reserves": [
+      "Type de bien : Maison vs Appartement recherché",
+      "Prix : 1 245 000 € > budget max 950 000 €",
+      "Localisation scolaire : 8 min en voiture, pas à pied (<10 min)",
+      "Absence d'étage élevé (maison de plain‑pied)",
+      "Pas de proximité du Transilien pour La Défense"
+    ],
+    "ref_bien": "VAU-2026-114",
+    "acquereur": "Famille Ricci",
+    "anciennete_besoin_jours": 107
+  },
+  {
+    "score": 30,
+    "verdict": "Le bien ne répond pas aux critères financiers essentiels et le budget est nettement inférieur à la fourchette attendue, ce qui le rend inadapté malgré des points forts qualitatifs.",
+    "declencheur": "Jardin clos de 620 m² avec accès direct à la forêt, répondant au besoin de jardin exploitable et de promenade en nature.",
+    "preuve_annonce": "Sejour double traversant ouvrant sur un jardin clos de 620 m2 sans vis-à-vis. Le fond du jardin donne directement sur le bois : le portillon ouvre sur les sentiers de la forêt de Fausses-Reposes.",
+    "rappel_verbatim": "Jardin indispensable, madame jardine",
+    "message_agent": "Ce bien possède un grand jardin exploitable et un accès à la forêt, ce qui correspond bien aux attentes de jardinage et de promenade. Cependant, le prix de 1 245 000 € est bien en dessous du budget requis (1 800 000‑2 000 000 €) et il faut vérifier que la localisation (Vaucresson) se situe bien à moins de 20 minutes en voiture de Saint‑Cloud. Le manque de conformité budgétaire est rédhibitoire.",
+    "reserves": [
+      "Prix bien inférieur à la fourchette budgétaire exigée (budget 1 800 000‑2 000 000 €).",
+      "Distance exacte à Saint‑Cloud non précisée dans l’annonce ; à confirmer.",
+      "Maison datant des années 90, pas un bâtiment très ancien avec pierre ou meulière, mais aucune mention de cachet historique."
+    ],
+    "ref_bien": "VAU-2026-114",
+    "acquereur": "M. et Mme Delaunay",
+    "anciennete_besoin_jours": 81
+  },
+  {
+    "score": 0,
+    "verdict": "Non compatible",
+    "declencheur": "Dépassement du budget et type de bien non conforme",
+    "preuve_annonce": "Dans une allée privée au calme absolu, maison familiale de 178 m2... Prix : 1 245 000 €",
+    "rappel_verbatim": "elle bosse de chez elle cinq jours sur sept, il lui faut une pièce en plus ou un vrai coin bureau avec de la lumière. elle veut absolument un extérieur, terrasse ou grand balcon, parce qu'elle ne veut plus descendre dans la rue. Le calme est important aussi, pas sur un axe passant.",
+    "message_agent": "Ce bien dépasse largement le budget maximal de 780 000 €, est une maison (pas un appartement) et ne propose pas de terrasse ou balcon privé ; il ne répond donc pas aux besoins de Sophie.",
+    "reserves": [
+      "Prix 1 245 000 € > budget max 780 000 €",
+      "Type de bien : Maison alors que l'acquéreur recherche un Appartement",
+      "Pas de terrasse ou balcon, uniquement un jardin",
+      "Pas de mention d'un coin bureau lumineux",
+      "Bien déjà au-dessus du budget, critère rédhibitoire"
+    ],
+    "ref_bien": "VAU-2026-114",
+    "acquereur": "Sophie Marchand",
+    "anciennete_besoin_jours": 68
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins de l'acquéreur",
+    "declencheur": null,
+    "preuve_annonce": null,
+    "rappel_verbatim": "ce qui l'interesse c'est que ce soit loue le douze du mois ; pas de copropriete avec des travaux votes, elle ne veut pas de mauvaise surprise sur les appels de fonds",
+    "message_agent": "Ce bien ne correspond pas du tout aux critères de Mme Ouazana : il s'agit d'une maison de 1,245 M€ (budget max 400 k€), 4 chambres (elle cherche un studio ou 2 pièces), aucune indication de location immédiate ni de rendements, et il n'est pas situé à proximité des transports.",
+    "reserves": [
+      "Prix bien au-dessus du budget maximal (1 245 000 € > 400 000 €)",
+      "Type de bien incompatible (Maison vs Appartement, studio/2 pièces requis)",
+      "Surface et nombre de pièces excessifs par rapport à la demande",
+      "Absence de mention de proximité des transports publics",
+      "Aucune indication de location immédiate ou de rendement brut ≥ 4 %",
+      "Possibilité de charges futures non explicitée (travaux, frais de copropriété)",
+      "Localisation en zone résidentielle éloignée des transports (8 min en voiture uniquement)"
+    ],
+    "ref_bien": "VAU-2026-114",
+    "acquereur": "Mme Ouazana",
+    "anciennete_besoin_jours": 49
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins de l'acquéreur",
+    "declencheur": "",
+    "preuve_annonce": "",
+    "rappel_verbatim": "",
+    "message_agent": "Ce bien ne correspond pas aux critères durs de l'acquéreur : il s'agit d'un appartement (pas une maison), seulement 3 chambres (au moins 4 requises) et le prix de 935 000 € est bien en dessous du budget de 1,2‑1,3 M€. Aucun des critères qualitatifs (accès immédiat à la forêt, calme et verdure, capacité d'accueil pour enfants et petits‑enfants) n'est mentionné dans l'annonce.",
+    "reserves": [
+      "Type de bien : appartement vs maison exigée",
+      "Nombre de chambres : 3 vs 4 minimum",
+      "Prix : 935 000 € vs budget 1 200 000‑1 300 000 €",
+      "Absence d'indications d'accès à un bois/forêt ou d'environnement calme et verdoyant"
+    ],
+    "ref_bien": "GAR-2026-097",
+    "acquereur": "Jean Vasseur",
+    "anciennete_besoin_jours": 123
+  },
+  {
+    "score": 10,
+    "verdict": "Inadéquat",
+    "declencheur": "Proximité de Saint‑Cloud (environ 15 min en voiture)",
+    "preuve_annonce": "la gare de Garches‑Marnes‑la‑Coquette à 7 minutes",
+    "rappel_verbatim": "la mere de madame est a Saint-Cloud, elle a quatre-vingt-trois ans et elle est seule. Ils veulent pouvoir etre chez elle en moins de vingt minutes. C'est non negociable",
+    "message_agent": "Ce bien ne correspond pas aux critères essentiels (maison avec jardin, caractère ancien, budget 1,8‑2 M€) malgré la proximité de Saint‑Cloud, il faut le décliner.",
+    "reserves": [
+      "Type de bien : appartement alors que le besoin est une maison",
+      "Absence de jardin exploitable pour le jardinage",
+      "Pas de cachet ancien (pas de pierre, meulière, caractère)",
+      "Prix bien en dessous du budget souhaité (935 k€ vs 1,8‑2 M€)",
+      "Redhibitoire : absence de jardin"
+    ],
+    "ref_bien": "GAR-2026-097",
+    "acquereur": "M. et Mme Delaunay",
+    "anciennete_besoin_jours": 78
+  },
+  {
+    "score": 0,
+    "verdict": "Inadéquat",
+    "declencheur": "Dépassement du budget",
+    "preuve_annonce": "prix : 935000",
+    "rappel_verbatim": "Budget max 780 000 EUR strict",
+    "message_agent": "Ce bien dépasse largement le budget de Sophie (935 000 € > 780 000 €). Même s'il offre 3 pièces, un balcon de 9 m² et une bonne luminosité, il ne correspond pas à son critère budgétaire impératif.",
+    "reserves": [
+      "Pas de mention d'un coin bureau très lumineux, risque de logement sombre pour le télétravail",
+      "Pas d'indication claire d'un extérieur privé accessible directement (balcon filant, mais pas explicitement privé)",
+      "Aucun élément sur le calme ou l'absence d'axe passant"
+    ],
+    "ref_bien": "GAR-2026-097",
+    "acquereur": "Sophie Marchand",
+    "anciennete_besoin_jours": 65
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux critères de l'acquéreur",
+    "declencheur": "Budget largement dépassé et type de bien (3 pièces) non conforme aux exigences (studio ou 2 pièces)",
+    "preuve_annonce": "Prix : 935000, Trois chambres, surface 92 m², appartement de 4e étage, proximité école et gare",
+    "rappel_verbatim": "ce qui l'interesse c'est que ce soit loue le douze du mois ; pas de copropriete avec des travaux votes, elle ne veut pas de mauvaise surprise sur les appels de fonds",
+    "message_agent": "Ce bien ne correspond ni au budget maximal de 400 000 € ni au critère de type (studio ou 2 pièces) de Mme Ouazana, il faut le laisser de côté.",
+    "reserves": [],
+    "ref_bien": "GAR-2026-097",
+    "acquereur": "Mme Ouazana",
+    "anciennete_besoin_jours": 46
+  },
+  {
+    "score": 2,
+    "verdict": "Le bien ne correspond pas aux critères essentiels de l'acquéreur, notamment le budget et l'accès immédiat à une forêt.",
+    "declencheur": "Jardin paysager de 900 m² avec arbres centenaires et potager (calme et verdure)",
+    "preuve_annonce": "Jardin paysager de 900 m2 avec arbres centenaires et potager.",
+    "rappel_verbatim": "il voulait pouvoir sortir de chez lui et être dans les bois en cinq minutes à pied. Une lisière de forêt, c'est le mot qu'il a employé",
+    "message_agent": "Le bien dépasse largement le budget de Jean Vasseur (1 875 000 € vs 1 200‑1 300 k€) et ne mentionne aucun accès immédiat à une forêt, même s'il offre un grand jardin verdoyant. Il n'est donc pas recommandé de le proposer.",
+    "reserves": [
+      "Prix bien au‑dessus du budget maximal (1 875 000 € > 1 300 000 €)",
+      "Absence d'indication d'accès à une forêt ou lisière boisée à cinq minutes à pied",
+      "Le critère de calme et verdure est partiellement satisfait, mais le dépassement de budget prime"
+    ],
+    "ref_bien": "SCL-2026-088",
+    "acquereur": "Jean Vasseur",
+    "anciennete_besoin_jours": 120
+  },
+  {
+    "score": 0,
+    "verdict": "Non compatible",
+    "declencheur": "Type de bien (Maison) et prix (1 875 000 €) bien au‑delà du budget et du critère dur d'appartement 4 pièces",
+    "preuve_annonce": "Maison ... prix 1 875 000 €, cinq chambres, jardin de 900 m², proche du parc de Saint‑Cloud.",
+    "rappel_verbatim": "madame m'a dit qu'elle ne voulait plus prendre la voiture le matin. Elle veut pouvoir les emmener à pied (école primaire à moins de 10 min). Monsieur travaille à La Défense, il lui faut le Transilien pas trop loin. Ils sont au rez‑de‑chaussée actuellement et ils en ont assez du vis‑à‑vis.",
+    "message_agent": "Ce bien ne correspond pas aux critères essentiels du client : il s'agit d'une maison, le prix dépasse largement le budget de 950 000 €, il n'est pas un appartement 4 pièces en étage élevé, et aucune indication ne montre une proximité à une école primaire ou au Transilien. Aucun des besoins qualitatifs n'est satisfait.",
+    "reserves": [],
+    "ref_bien": "SCL-2026-088",
+    "acquereur": "Famille Ricci",
+    "anciennete_besoin_jours": 101
+  },
+  {
+    "score": 10,
+    "verdict": "Non compatible",
+    "declencheur": "Exterieur prive accessible directement",
+    "preuve_annonce": "Jardin paysager de 900 m2 avec arbres centenaires et potager.",
+    "rappel_verbatim": "elle veut absolument un exterieur, terrasse ou grand balcon, parce qu'elle ne veut plus descendre dans la rue",
+    "message_agent": "Attention : ce bien dépasse largement le budget maximal de 780 000 €, n'est pas un appartement mais une maison de 5 chambres, et ne propose pas de terrasse ou balcon. Il ne correspond donc pas aux critères essentiels de Sophie.",
+    "reserves": [
+      "Prix 1 875 000 € > budget max 780 000 €",
+      "Type de bien : Maison alors que l'acquéreur recherche un appartement",
+      "Nombre de pièces trop élevé (5 chambres) alors qu'elle veut 2‑3 pièces",
+      "Pas de terrasse ou balcon privé, seulement un jardin",
+      "Possibilité d'être sur un axe passant (non précisé mais risque élevé pour une maison en bord de parc)"
+    ],
+    "ref_bien": "SCL-2026-088",
+    "acquereur": "Sophie Marchand",
+    "anciennete_besoin_jours": 62
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins de l'acquéreur",
+    "declencheur": "Type de bien (Maison) et prix (1 875 000 €) largement supérieurs aux exigences (Appartement, budget max 400 000 €)",
+    "preuve_annonce": "type\": \"Maison\",\n  \"prix\": 1875000",
+    "rappel_verbatim": "ce qui l'interesse c'est que ce soit loue le douze du mois ; pas de copropriete avec des travaux votes, elle ne veut pas de mauvaise surprise sur les appels de fonds",
+    "message_agent": "Ce bien ne correspond pas aux critères d'investissement de Mme Ouazana : il s'agit d'une maison de 1,875 M€, bien au‑delà du budget de 400 k€, et ne correspond pas au type recherché (studio ou 2 pièces). Aucun indice de rendement locatif ou de proximité transports n'est fourni, et le risque de charges exceptionnelles est élevé.",
+    "reserves": [],
+    "ref_bien": "SCL-2026-088",
+    "acquereur": "Mme Ouazana",
+    "anciennete_besoin_jours": 43
+  },
+  {
+    "score": 0,
+    "verdict": "Non compatible",
+    "declencheur": "",
+    "preuve_annonce": "",
+    "rappel_verbatim": "il voulait pouvoir sortir de chez lui et etre dans les bois en cinq minutes a pied. Une lisiere de foret, c'est le mot qu'il a employe",
+    "message_agent": "Ce bien ne correspond pas aux critères essentiels de Jean Vasseur : il s'agit d'un appartement de 2 chambres à 762 000 €, alors qu'il recherche une maison de 4 chambres entre 1 200 000 € et 1 300 000 € avec un accès immédiat à la forêt. Aucun des besoins qualitatifs n'est satisfait.",
+    "reserves": [
+      "Type de bien : appartement vs maison recherchée",
+      "Nombre de chambres : 2 < 4 requis",
+      "Budget : 762 000 € < 1 200 000 € minimum",
+      "Absence d'accès à une lisière de forêt ou d'environnement boisé",
+      "Pas de terrain ou d'espace extérieur pour accueillir enfants et petits‑enfants"
+    ],
+    "ref_bien": "VDA-2026-102",
+    "acquereur": "Jean Vasseur",
+    "anciennete_besoin_jours": 124
+  },
+  {
+    "score": 35,
+    "verdict": "Correspondance très limitée – le bien ne satisfait pas les critères durs essentiels (nombre de pièces, étage élevé) et ne répond pas aux besoins de proximité scolaire ou de transport, mais il offre une luminosité maximale et l'absence de vis‑à‑vis recherchées.",
+    "declencheur": "Absence de vis‑à‑vis et très bonne luminosité grâce à la terrasse plein sud et à la localisation en dernier étage",
+    "preuve_annonce": "Dernier étage... Terrasse de 14 m2 plein sud, très lumineuse toute la journée.",
+    "rappel_verbatim": "ils sont au rez-de-chaussee actuellement et ils en ont assez du vis-a-vis",
+    "message_agent": "Ce bien est en dernier étage, très lumineux et sans vis‑à‑vis, ce qui correspond à leur souhait d’échapper à l’obscurité et au vis‑à‑vis, mais il ne comporte que deux chambres et ne répond pas aux exigences de 4 pièces, de proximité d’école primaire ni de transport Transilien.",
+    "reserves": [
+      "Nombre de pièces insuffisant (2 chambres + double séjour = 3 pièces, alors que le besoin était 4 pièces).",
+      "Pas d'information sur la proximité d'une école primaire – risque de dépasser les 10 minutes à pied.",
+      "Aucun détail sur la proximité d'une gare Transilien vers La Défense.",
+      "Le critère dur « étage élevé » est respecté, mais le critère dur « extérieur même petit » n’est pas clairement confirmé (terrasse de 14 m², mais pas de jardin)."
+    ],
+    "ref_bien": "VDA-2026-102",
+    "acquereur": "Famille Ricci",
+    "anciennete_besoin_jours": 105
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins essentiels de l'acquéreur",
+    "declencheur": "Absence totale de critères qualitatifs requis (type de bien, jardin, cachet, proximité)",
+    "preuve_annonce": "Appartement de 68 m2 en dernier étage. Double séjour, deux chambres dont une transformable en bureau. Terrasse de 14 m2 plein sud, très lumineuse toute la journée. Rue résidentielle sans passage. Stationnement privé.",
+    "rappel_verbatim": "Ils veulent une maison de caractère avec jardin exploitable, ancien (pierre ou maçonnerie) et à moins de 20 minutes en voiture de Saint‑Cloud.",
+    "message_agent": "Ce bien ne correspond pas du tout aux critères durs du couple Delaunay : ce n'est pas une maison, il n'y a pas de jardin, il ne possède pas le cachet d'une construction ancienne, il est hors de leur fourchette budgétaire et la localisation n'est pas garantie à moins de 20 min de Saint‑Cloud. Aucun des besoins qualitatifs n'est satisfait.",
+    "reserves": [
+      "Type de bien : appartement vs maison recherchée",
+      "Absence de jardin (redhibitoire)",
+      "Manque de caractère ancien (pierre/maçonnerie)",
+      "Budget bien inférieur au minimum requis (1 800 000 €)",
+      "Proximité de Saint‑Cloud non vérifiable"
+    ],
+    "ref_bien": "VDA-2026-102",
+    "acquereur": "M. et Mme Delaunay",
+    "anciennete_besoin_jours": 79
+  },
+  {
+    "score": 0,
+    "verdict": "Inadéquat",
+    "declencheur": "Prix du bien largement supérieur au budget maximal de 400 000 €",
+    "preuve_annonce": "prix : 762 000 €",
+    "rappel_verbatim": "ce qui l'interesse c'est que ce soit loue le douze du mois",
+    "message_agent": "Ne pas proposer ce bien à Mme Ouazana : le prix (762 k€) dépasse largement son budget maximal de 400 k€, ce qui rend le projet non viable malgré la conformité du type de bien.",
+    "reserves": [
+      "Budget dépassé de +362 000 €",
+      "Absence d'information sur la proximité des transports",
+      "Aucun indice sur le rendement locatif ni sur l'absence de charges exceptionnelles"
+    ],
+    "ref_bien": "VDA-2026-102",
+    "acquereur": "Mme Ouazana",
+    "anciennete_besoin_jours": 47
+  },
+  {
+    "score": 0,
+    "verdict": "Incompatible",
+    "declencheur": "",
+    "preuve_annonce": "",
+    "rappel_verbatim": "",
+    "message_agent": "Le bien ne correspond ni aux critères durs (type, nombre de chambres, budget) ni aux besoins qualitatifs du client. Ne pas le proposer.",
+    "reserves": [
+      "Type de bien différent (Appartement vs Maison)",
+      "Nombre de chambres insuffisant (1 < 4)",
+      "Prix bien en dessous du budget minimum (395 000 € < 1 200 000 €)",
+      "Absence d'accès à la forêt ou d'environnement calme et verdoyant"
+    ],
+    "ref_bien": "COU-2026-071",
+    "acquereur": "Jean Vasseur",
+    "anciennete_besoin_jours": 118
+  },
+  {
+    "score": 0,
+    "verdict": "Inadéquat",
+    "declencheur": "",
+    "preuve_annonce": "",
+    "rappel_verbatim": "",
+    "message_agent": "Ce bien ne correspond pas aux critères essentiels de la famille Ricci : il ne possède que deux pièces (ils recherchent un appartement 4 pièces), aucune école primaire à moins de 10 minutes à pied, il n'est pas en étage élevé et il est actuellement loué, donc inadapté à leurs besoins familiaux.",
+    "reserves": [
+      "Nombre de pièces insuffisant (2 pièces vs 4 requis)",
+      "Pas d'information sur la proximité d'une école primaire (risque de >10 min à pied)",
+      "Pas d'indication d'étage élevé (critère dur)",
+      "Bien en location, non disponible pour occupation immédiate",
+      "Pas d'extérieur même petit (critère dur)",
+      "Pas de mention d'absence de vis-à-vis ou de luminosité (risque de pénombre)"
+    ],
+    "ref_bien": "COU-2026-071",
+    "acquereur": "Famille Ricci",
+    "anciennete_besoin_jours": 99
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins de l'acquéreur",
+    "declencheur": "Type de bien (Appartement) et budget très inférieur aux exigences (1 800 000‑2 000 000 €)",
+    "preuve_annonce": "type: \"Appartement\", prix: 395000",
+    "rappel_verbatim": "la mere de madame est a Saint-Cloud, elle a quatre-vingt-trois ans et elle est seule. Ils veulent pouvoir etre chez elle en moins de vingt minutes. C'est non negociable; ils voulaient une maison avec une ame. Pierre de taille, meuliere, ce genre de chose; Jardin indispensable, madame jardine",
+    "message_agent": "Ce bien ne correspond pas du tout aux critères du client : c'est un appartement sans jardin, bien en dessous du budget et ne répond pas aux exigences de caractère, d'ancienneté ou de proximité de Saint‑Cloud. Ne le proposez pas.",
+    "reserves": [],
+    "ref_bien": "COU-2026-071",
+    "acquereur": "M. et Mme Delaunay",
+    "anciennete_besoin_jours": 73
+  },
+  {
+    "score": 2,
+    "verdict": "Non compatible",
+    "declencheur": "Absence de terrasse ou grand balcon (critère dur) et nombre de chambres insuffisant",
+    "preuve_annonce": "Deux pièces de 38 m2 en bon état, loué actuellement 1 380 euros charges comprises, bail en cours. Metro Louise Michel à 4 minutes à pied, gare de La Defense à deux stations.",
+    "rappel_verbatim": "elle veut absolument un exterieur, terrasse ou grand balcon, parce qu'elle fume et qu'elle ne veut plus descendre dans la rue",
+    "message_agent": "Ce bien ne répond pas aux critères essentiels de Sophie : il n'a pas de terrasse ou balcon et ne propose qu'une seule chambre, alors qu'elle recherche 2‑3 pièces avec un espace bureau lumineux et un extérieur privé. Il vaut mieux ne pas le proposer.",
+    "reserves": [
+      "Nombre de chambres = 1 alors que le besoin est 2‑3 pièces",
+      "Pas de terrasse ou balcon, critère dur",
+      "Pas de mention d'un coin bureau lumineux, risque de logement sombre",
+      "Possibilité d'être situé sur un axe passant (proximité métro/gare), ce qui contrevient au besoin de calme"
+    ],
+    "ref_bien": "COU-2026-071",
+    "acquereur": "Sophie Marchand",
+    "anciennete_besoin_jours": 60
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins essentiels de l'acquéreur",
+    "declencheur": "Type de bien (Maison) et prix (1 180 000 €) dépassent le budget et le critère de type (Appartement)",
+    "preuve_annonce": "Maison de 165 m2 sur avenue passante, quatre chambres, jardin de 380 m2 exposé est. Beaux volumes, à moderniser entièrement : électricité, plomberie et isolation à reprendre.",
+    "rappel_verbatim": "madame m'a dit qu'elle ne voulait plus prendre la voiture le matin. Elle veut pouvoir les emmener à pied",
+    "message_agent": "Ce bien ne correspond pas aux exigences de la famille Ricci : c’est une maison au prix de 1,18 M€, bien au-dessus du budget de 950 k€ et ne répond pas aux besoins d’appartement, d’étage élevé, d’école primaire à pied, ni de proximité du Transilien.",
+    "reserves": [
+      "Type de bien incompatible (Maison vs Appartement)",
+      "Prix supérieur au budget max (1 180 000 € > 950 000 €)",
+      "Absence d'information sur proximité d'école primaire (critère redhibitoire)",
+      "Absence de proximité du Transilien pour La Défense",
+      "Pas d'étage élevé ni de lumière naturelle garantie",
+      "Pas d'indication d'absence de vis-à-vis ou de pénombre"
+    ],
+    "ref_bien": "GAR-2026-103",
+    "acquereur": "Famille Ricci",
+    "anciennete_besoin_jours": 106
+  },
+  {
+    "score": 2,
+    "verdict": "Non conforme aux besoins essentiels de l'acquéreur",
+    "declencheur": "Prix bien en dessous du budget minimum (1 180 000 € vs 1 800 000 € requis) et absence d'indications de cachet pierre/murs anciens",
+    "preuve_annonce": "Prix en conséquence. Fort potentiel pour bricoleur ou investisseur.",
+    "rappel_verbatim": "la mere de madame est a Saint-Cloud, elle a quatre-vingt-trois ans et elle est seule. Ils veulent pouvoir etre chez elle en moins de vingt minutes. C'est non negociable",
+    "message_agent": "Le bien est nettement sous le budget requis (1,18 M€ au lieu de 1,8‑2 M€) et l'annonce ne mentionne aucun caractère ancien en pierre ou en maçonnerie, ce qui contrevient aux critères d'âme et de cachet. Même si la localisation et le jardin sont adéquats, ce bien ne correspond pas aux attentes prioritaires du couple.",
+    "reserves": [
+      "Localisation : Garches est à moins de 20 min en voiture de Saint‑Cloud, ce qui satisfait le critère de proximité.",
+      "Jardin : 380 m², exploitable pour le jardinage, répond au besoin de madame.",
+      "Caractère du bien : aucune indication de pierre, meulière ou d’ancienneté, risque de ne pas répondre au besoin de « maison de caractère »."
+    ],
+    "ref_bien": "GAR-2026-103",
+    "acquereur": "M. et Mme Delaunay",
+    "anciennete_besoin_jours": 80
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins de l'acquéreur",
+    "declencheur": "",
+    "preuve_annonce": "Maison de 165 m2 sur avenue passante, quatre chambres, jardin de 380 m2 exposé est.",
+    "rappel_verbatim": "Le calme est important aussi, pas sur un axe passant",
+    "message_agent": "Ce bien ne correspond pas aux critères de Sophie : dépasse le budget (1 180 000 € > 780 000 €), type maison au lieu d'appartement, situé sur une avenue passante (axe passant), pas de terrasse ou balcon, donc aucun des besoins qualitatifs n'est satisfait.",
+    "reserves": [
+      "Prix largement au‑dessus du budget maximal",
+      "Type de bien (maison) incompatible avec la recherche d'un appartement",
+      "Localisation sur une avenue passante, contre le critère de calme",
+      "Absence de terrasse ou balcon privé directement accessible"
+    ],
+    "ref_bien": "GAR-2026-103",
+    "acquereur": "Sophie Marchand",
+    "anciennete_besoin_jours": 67
+  },
+  {
+    "score": 0,
+    "verdict": "Non conforme aux besoins de l'acquéreur",
+    "declencheur": "Type de bien (Maison) et prix (1 180 000 €) incompatibles avec le critère dur \"Studio ou 2 pièces\" et le budget max de 400 000 €",
+    "preuve_annonce": "Maison de 165 m2 sur avenue passante, quatre chambres, jardin de 380 m2 exposé est. Beaux volumes, à moderniser entièrement : électricité, plomberie et isolation à reprendre. Prix en conséquence.",
+    "rappel_verbatim": "ce qui l'interesse c'est que ce soit loue le douze du mois",
+    "message_agent": "Ce bien ne correspond pas du tout aux exigences de Mme Ouazana : c’est une maison de 4 chambres à 1,18 M€, bien au‑delà du budget, nécessitant d’importants travaux et ne permettant pas une location immédiate ni continue.",
+    "reserves": [
+      "Type de bien : Maison vs. besoin d'un appartement (studio ou 2 pièces)",
+      "Prix bien au‑delà du budget max de 400 000 €",
+      "Travaux lourds à prévoir (électricité, plomberie, isolation) – redhibitoire",
+      "Rendement incertain, aucune donnée de revenu locatif fourni",
+      "Absence d'information sur proximité des transports"
+    ],
+    "ref_bien": "GAR-2026-103",
+    "acquereur": "Mme Ouazana",
+    "anciennete_besoin_jours": 48
   }
 ]
