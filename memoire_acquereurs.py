@@ -99,7 +99,23 @@ def confronter(fiche, bien):
     resultat = _json_depuis(demander(CONSIGNE_MATCH, invite).strip())
     resultat["ref_bien"] = bien["ref"]
     resultat["acquereur"] = fiche.get("acquereur")
+    resultat["anciennete_besoin_jours"] = _anciennete(fiche, bien)
     return resultat
+
+
+def _anciennete(fiche, bien):
+    """Nombre de jours entre le besoin exprime et l'entree du bien.
+
+    Calcule a partir des dates reelles, jamais demande a l'IA : une date
+    inventee ferait perdre toute credibilite a l'argument "128 jours apres".
+    """
+    from datetime import datetime
+    try:
+        d1 = datetime.strptime(fiche.get("date_echange", ""), "%Y-%m-%d")
+        d2 = datetime.strptime(bien.get("entree_portefeuille", ""), "%Y-%m-%d")
+        return max((d2 - d1).days, 0)
+    except (ValueError, TypeError):
+        return 0
 
 
 # --------------------------------------------------------------------------- #

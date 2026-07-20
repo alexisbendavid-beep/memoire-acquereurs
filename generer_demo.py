@@ -21,10 +21,10 @@ with open(os.path.join(RACINE, "donnees_demo", "vocaux", "2026-03-14_jean_vasseu
 
 e = html.escape
 FICHE_JEAN = next(f for f in FICHES if f["acquereur"] == "Jean Vasseur")
-retenus = sorted([r for r in RAPPROCHEMENTS if r["score"] >= 70],
-                 key=lambda x: -x["score"])
-rejets = [r for r in RAPPROCHEMENTS if r["score"] < 70]
-nb_qualitatifs = sum(len(f["criteres_qualitatifs"]) for f in FICHES)
+retenus = sorted([r for r in RAPPROCHEMENTS if r.get("score", 0) >= 70],
+                 key=lambda x: -x.get("score", 0))
+rejets = [r for r in RAPPROCHEMENTS if r.get("score", 0) < 70]
+nb_qualitatifs = sum(len(f.get("criteres_qualitatifs", [])) for f in FICHES)
 
 
 def euros(n):
@@ -137,21 +137,28 @@ def bloc_fiche():
 
 
 def bloc_alerte(r, rejet=False):
-    bien = BIENS[r["ref_bien"]]
+    """Tolerant aux champs manquants : les rapprochements viennent de l'IA,
+    qui peut omettre une cle. Un affichage ne doit jamais casser le robot."""
+    bien = BIENS.get(r.get("ref_bien"), {})
     cls = "alert rej" if rejet else "alert"
+    prix = bien.get("prix")
     h = ["<div class='" + cls + "'>"]
-    h.append("<div class='ah'><div><b>" + e(r["acquereur"]) + "</b>"
-             "<div class='ref'>" + e(r["ref_bien"]) + " . " + e(bien["adresse"])
-             + " . " + euros(bien["prix"]) + "</div></div>"
-             "<div class='score'>" + str(r["score"]) + "/100</div></div>")
-    h.append("<div class='msg'>" + e(r["message_agent"]) + "</div>")
-    h.append("<div class='pair'><span>Il avait dit, il y a "
-             + str(r["anciennete_besoin_jours"]) + " jours</span><i>\""
-             + e(r["rappel_verbatim"]) + "\"</i></div>")
-    h.append("<div class='pair'><span>Ce que dit l'annonce</span><i>\""
-             + e(r["preuve_annonce"]) + "\"</i></div>")
-    for res in r.get("reserves", []):
-        h.append("<div class='age'>" + e(res) + "</div>")
+    h.append("<div class='ah'><div><b>" + e(str(r.get("acquereur", "?"))) + "</b>"
+             "<div class='ref'>" + e(str(r.get("ref_bien", ""))) + " . "
+             + e(str(bien.get("adresse", "")))
+             + (" . " + euros(prix) if isinstance(prix, int) else "") + "</div></div>"
+             "<div class='score'>" + str(r.get("score", 0)) + "/100</div></div>")
+    if r.get("message_agent"):
+        h.append("<div class='msg'>" + e(str(r["message_agent"])) + "</div>")
+    if r.get("rappel_verbatim"):
+        h.append("<div class='pair'><span>Il avait dit, il y a "
+                 + str(r.get("anciennete_besoin_jours", 0)) + " jours</span><i>\""
+                 + e(str(r["rappel_verbatim"])) + "\"</i></div>")
+    if r.get("preuve_annonce"):
+        h.append("<div class='pair'><span>Ce que dit l'annonce</span><i>\""
+                 + e(str(r["preuve_annonce"])) + "\"</i></div>")
+    for res in r.get("reserves", []) or []:
+        h.append("<div class='age'>" + e(str(res)) + "</div>")
     h.append("</div>")
     return "".join(h)
 

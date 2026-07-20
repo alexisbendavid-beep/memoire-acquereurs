@@ -87,7 +87,7 @@ def carte(r, bien):
 
    <div style="font:11px Helvetica,Arial,sans-serif;color:#8a97a3;text-transform:uppercase;
      letter-spacing:1px;margin-bottom:3px">
-     Il avait dit, il y a {r.get('anciennete_besoin_jours','?')} jours</div>
+     Il avait dit, il y a {r.get('anciennete_besoin_jours', 0)} jours</div>
    <div style="font:italic 13px Helvetica,Arial,sans-serif;color:#43586a;
      line-height:1.5;margin-bottom:11px">&laquo;&nbsp;{r.get('rappel_verbatim','')}&nbsp;&raquo;</div>
 
