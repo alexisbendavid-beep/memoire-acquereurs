@@ -1,0 +1,55 @@
+# Boucle de demonstration pour Christophe Raas.
+#
+# Toutes les 10 minutes : releve la boite, accuse reception si un mail de
+# Raas est arrive, transcrit le vocal, confronte au portefeuille public, et
+# envoie l'analyse a Alexis seul.
+#
+# ACCUSE_AUTO est la seule automatisation vers un client, et son texte est
+# fige dans le code. Mettre la variable a 0 dans les Settings du depot la
+# desactive instantanement, sans toucher au code.
+name: Demo Raas
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: demo-raas
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rafraichir le portefeuille public
+        env:
+          FOURNISSEUR_IA: groq
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python aspirer_portefeuille.py --pause 0.5 --si-plus-vieux-que 12
+
+      - name: Traiter les messages de Christophe Raas
+        env:
+          FOURNISSEUR_IA: groq
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EXPEDITEURS_DEMO: ${{ vars.EXPEDITEURS_DEMO || 'christopheraas@agence-rg.fr' }}
+          ACCUSE_AUTO: ${{ vars.ACCUSE_AUTO || '1' }}
+        run: python demo_raas.py
+
+      - name: Conserver le portefeuille et le journal
+        run: |
+          git config user.name "robot-memoire"
+          git config user.email "robot@local"
+          git add portefeuille_agence_rg.json demo_raas_traites.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Portefeuille et journal de demo"
+          git push || true
