@@ -436,5 +436,52 @@ def main():
         print("  traite. " + str(nb) + " correspondance(s) retenue(s).")
 
 
+def surveiller(minutes, intervalle=60):
+    """Surveille la boite en continu pendant N minutes.
+
+    Pourquoi ce mode existe
+    -----------------------
+    Le planificateur de GitHub n'est pas ponctuel : une tache reglee toutes
+    les 10 minutes peut n'etre lancee qu'une heure plus tard. Or on a promis
+    a Christophe Raas un accuse de reception rapide, et une promesse tenue
+    en retard est pire qu'une promesse non faite.
+
+    Plutot que de dependre du planificateur, on lance UNE execution longue
+    qui regarde la boite toutes les 60 secondes. Le planificateur ne sert
+    plus qu'a relancer la surveillance quand elle se termine, et son retard
+    n'a plus d'importance.
+
+    Une panne passagere (reseau, quota) n'interrompt pas la surveillance :
+    on note l'incident et on reessaie au tour suivant.
+    """
+    fin = time.time() + minutes * 60
+    tour, incidents = 0, 0
+    print("Surveillance de la boite pendant " + str(minutes) + " minutes, "
+          "toutes les " + str(intervalle) + " secondes.\n")
+    while time.time() < fin:
+        tour += 1
+        try:
+            main()
+        except Exception as err:  # noqa: BLE001
+            incidents += 1
+            print("Tour " + str(tour) + " : incident ignore (" + str(err)[:120] + ")")
+        restant = fin - time.time()
+        if restant <= 0:
+            break
+        time.sleep(min(intervalle, restant))
+    print("\nSurveillance terminee. " + str(tour) + " tour(s), "
+          + str(incidents) + " incident(s).")
+
+
 if __name__ == "__main__":
-    main()
+    import argparse
+    p = argparse.ArgumentParser(description="Boucle de demonstration Raas")
+    p.add_argument("--boucle", type=int, default=0,
+                   help="minutes de surveillance continue (0 = un seul passage)")
+    p.add_argument("--intervalle", type=int, default=60,
+                   help="secondes entre deux relevees")
+    args = p.parse_args()
+    if args.boucle:
+        surveiller(args.boucle, args.intervalle)
+    else:
+        main()
