@@ -1,3 +1,4 @@
+# google-generativeai seulement si FOURNISSEUR_IA=gemini
 google-generativeai>=0.8.0
 weasyprint>=60.0
 pypdf>=4.0.0

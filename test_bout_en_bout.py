@@ -35,12 +35,12 @@ def verifier(libelle, condition, detail=""):
 # --------------------------------------------------------------------------- #
 # Bac a sable : copie du projet
 # --------------------------------------------------------------------------- #
-for nom in ["memoire_acquereurs.py", "envoyer_alerte.py",
+for nom in ["memoire_acquereurs.py", "envoyer_alerte.py", "cerveau.py",
             "memoire_acquereurs.json", "rapprochements.json"]:
     shutil.copy(os.path.join(SOURCE, nom), BAC)
 shutil.copytree(os.path.join(SOURCE, "donnees_demo"), os.path.join(BAC, "donnees_demo"))
 sys.path.insert(0, BAC)
-os.environ["GEMINI_API_KEY"] = "bouchon"
+os.environ["GROQ_API_KEY"] = "bouchon"
 os.environ["GMAIL_ADDRESS"] = "alexis.bendavid@gmail.com"
 os.environ["GMAIL_APP_PASSWORD"] = "bouchon"
 
@@ -48,48 +48,40 @@ APPELS_IA = {"extractions": 0, "confrontations": 0}
 
 
 # --------------------------------------------------------------------------- #
-# Bouchon Gemini
+# Bouchon du cerveau : on remplace cerveau.demander sans toucher au reseau
 # --------------------------------------------------------------------------- #
-class ReponseBouchon:
-    def __init__(self, texte):
-        self.text = texte
+FICHE_BOUCHON = json.dumps({
+    "acquereur": "Madame Lefevre", "date_echange": "2026-07-21",
+    "type_bien": "Appartement", "budget_min": None, "budget_max": 850000,
+    "chambres_min": 2, "secteurs": [],
+    "criteres_durs": ["3 pieces", "Ascenseur"],
+    "criteres_qualitatifs": [{
+        "besoin": "Chambre imperativement sur cour",
+        "verbatim": "elle est infirmiere de nuit, elle dort la journee",
+        "pourquoi": "Travaille de nuit"}],
+    "redhibitoires": ["Chambre sur rue"], "maturite": "", "note_agent": ""
+}, ensure_ascii=False)
+
+MATCH_BOUCHON = json.dumps({
+    "score": 88, "verdict": "Correspondance sur le critere qualitatif",
+    "declencheur": "Chambres sur cour",
+    "preuve_annonce": "les deux chambres donnent sur la cour interieure au calme",
+    "rappel_verbatim": "elle est infirmiere de nuit, elle dort la journee",
+    "message_agent": "Rappelez Madame Lefevre, les chambres donnent sur cour.",
+    "reserves": []
+}, ensure_ascii=False)
 
 
-class ModeleBouchon:
-    def __init__(self, modele, system_instruction=""):
-        self.extraction = "Tu compares un bien" not in system_instruction
-
-    def generate_content(self, invite):
-        if self.extraction:
-            APPELS_IA["extractions"] += 1
-            return ReponseBouchon(json.dumps({
-                "acquereur": "Madame Lefevre", "date_echange": "2026-07-21",
-                "type_bien": "Appartement", "budget_min": None, "budget_max": 850000,
-                "chambres_min": 2, "secteurs": [],
-                "criteres_durs": ["3 pieces", "Ascenseur"],
-                "criteres_qualitatifs": [{
-                    "besoin": "Chambre imperativement sur cour",
-                    "verbatim": "elle est infirmiere de nuit, elle dort la journee",
-                    "pourquoi": "Travaille de nuit"}],
-                "redhibitoires": ["Chambre sur rue"], "maturite": "", "note_agent": ""
-            }, ensure_ascii=False))
+def demander_bouchon(consigne, invite, essais=3):
+    if "Tu compares un bien" in consigne:
         APPELS_IA["confrontations"] += 1
-        return ReponseBouchon(json.dumps({
-            "score": 88, "verdict": "Correspondance sur le critere qualitatif",
-            "declencheur": "Chambres sur cour",
-            "preuve_annonce": "les deux chambres donnent sur la cour interieure au calme",
-            "rappel_verbatim": "elle est infirmiere de nuit, elle dort la journee",
-            "message_agent": "Rappelez Madame Lefevre, les chambres donnent sur cour.",
-            "reserves": []
-        }, ensure_ascii=False))
+        return MATCH_BOUCHON
+    APPELS_IA["extractions"] += 1
+    return FICHE_BOUCHON
 
 
-faux_genai = types.ModuleType("google.generativeai")
-faux_genai.configure = lambda **kw: None
-faux_genai.GenerativeModel = ModeleBouchon
-if "google" not in sys.modules:
-    sys.modules["google"] = types.ModuleType("google")
-sys.modules["google.generativeai"] = faux_genai
+import cerveau
+cerveau.demander = demander_bouchon
 
 
 # --------------------------------------------------------------------------- #
@@ -116,6 +108,7 @@ smtplib.SMTP_SSL = SmtpBouchon
 
 os.chdir(BAC)
 import memoire_acquereurs as moteur
+moteur.demander = demander_bouchon
 
 
 print("\n" + "=" * 70)

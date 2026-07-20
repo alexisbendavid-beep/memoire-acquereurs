@@ -19,13 +19,15 @@ import glob
 import argparse
 from datetime import date
 
+from cerveau import demander
+
 RACINE = os.path.dirname(os.path.abspath(__file__))
 DOSSIER_VOCAUX = os.path.join(RACINE, "donnees_demo", "vocaux")
 FICHIER_BIENS = os.path.join(RACINE, "donnees_demo", "biens.json")
 MEMOIRE = os.path.join(RACINE, "memoire_acquereurs.json")
 RAPPROCHEMENTS = os.path.join(RACINE, "rapprochements.json")
 
-MODELE = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+# Le choix du fournisseur et du modele vit desormais dans cerveau.py
 
 
 # --------------------------------------------------------------------------- #
@@ -58,11 +60,8 @@ def _json_depuis(texte):
 
 
 def extraire_fiche(vocal, nom_fichier):
-    import google.generativeai as genai
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    modele = genai.GenerativeModel(MODELE, system_instruction=CONSIGNE_EXTRACTION)
-    reponse = modele.generate_content("VOCAL DE DEBRIEF :\n\n" + vocal)
-    fiche = _json_depuis(reponse.text.strip())
+    reponse = demander(CONSIGNE_EXTRACTION, "VOCAL DE DEBRIEF :\n\n" + vocal)
+    fiche = _json_depuis(reponse.strip())
     fiche["source"] = os.path.basename(nom_fichier)
     return fiche
 
@@ -92,15 +91,12 @@ CONSIGNE_MATCH = (
 
 
 def confronter(fiche, bien):
-    import google.generativeai as genai
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    modele = genai.GenerativeModel(MODELE, system_instruction=CONSIGNE_MATCH)
     invite = (
         "FICHE BESOIN DE L'ACQUEREUR :\n" + json.dumps(fiche, ensure_ascii=False, indent=2)
         + "\n\nBIEN QUI VIENT D'ENTRER AU PORTEFEUILLE :\n"
         + json.dumps(bien, ensure_ascii=False, indent=2)
     )
-    resultat = _json_depuis(modele.generate_content(invite).text.strip())
+    resultat = _json_depuis(demander(CONSIGNE_MATCH, invite).strip())
     resultat["ref_bien"] = bien["ref"]
     resultat["acquereur"] = fiche.get("acquereur")
     return resultat
