@@ -47,9 +47,19 @@ jobs:
         run: python demo_raas.py
 
       - name: Conserver le portefeuille et le journal
+        # Sans "set -e" et sans rebase, un push refuse passait inapercu : le
+        # workflow restait vert alors que rien n'etait sauvegarde. On veut
+        # l'inverse : si la sauvegarde echoue, le run doit devenir rouge.
         run: |
+          set -e
           git config user.name "robot-memoire"
-          git config user.email "robot@local"
-          git add portefeuille_agence_rg.json demo_raas_traites.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "Portefeuille et journal de demo"
-          git push || true
+          git config user.email "robot@users.noreply.github.com"
+          git add -A portefeuille_agence_rg.json demo_raas_traites.json
+          if git diff --staged --quiet; then
+            echo "Rien de nouveau a sauvegarder."
+          else
+            git commit -m "Portefeuille public et journal de demonstration"
+            git pull --rebase --autostash origin main
+            git push origin main
+            echo "Sauvegarde effectuee."
+          fi
