@@ -1,42 +1,50 @@
-# Boucle de demonstration pour Christophe Raas.
+# Surveillance continue de la boite, pour la demonstration Christophe Raas.
 #
-# Toutes les 10 minutes : releve la boite, accuse reception si un mail de
-# Raas est arrive, transcrit le vocal, confronte au portefeuille public, et
-# envoie l'analyse a Alexis seul.
+# Pourquoi une boucle et non un simple cron
+# -----------------------------------------
+# Le planificateur de GitHub n'est pas ponctuel : une tache reglee toutes
+# les 10 minutes peut n'etre lancee qu'une heure plus tard. On a promis a
+# Raas un accuse de reception rapide. On lance donc UNE execution longue
+# qui releve la boite toutes les 60 secondes pendant 5 heures. Le cron ne
+# sert plus qu'a relancer la surveillance, et son retard devient sans
+# consequence.
 #
 # ACCUSE_AUTO est la seule automatisation vers un client, et son texte est
-# fige dans le code. Mettre la variable a 0 dans les Settings du depot la
-# desactive instantanement, sans toucher au code.
+# fige dans le code. Passer la variable a 0 dans les Settings du depot la
+# desactive instantanement.
 name: Demo Raas
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "0 */4 * * *"
   workflow_dispatch:
+    inputs:
+      minutes:
+        description: "Duree de surveillance en minutes"
+        required: false
+        default: "300"
 
 concurrency:
   group: demo-raas
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  demo:
+  surveiller:
     runs-on: ubuntu-latest
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Rafraichir le portefeuille public
-        env:
-          FOURNISSEUR_IA: groq
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python aspirer_portefeuille.py --pause 0.5 --si-plus-vieux-que 12
+      - name: Rafraichir le portefeuille si besoin
+        run: python aspirer_portefeuille.py --pause 0.4 --si-plus-vieux-que 12
 
-      - name: Traiter les messages de Christophe Raas
+      - name: Surveiller la boite en continu
         env:
           FOURNISSEUR_IA: groq
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -44,18 +52,15 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EXPEDITEURS_DEMO: ${{ vars.EXPEDITEURS_DEMO || 'christopheraas@agence-rg.fr' }}
           ACCUSE_AUTO: ${{ vars.ACCUSE_AUTO || '1' }}
-        run: python demo_raas.py
+          PYTHONUNBUFFERED: "1"
+        run: python demo_raas.py --boucle ${{ github.event.inputs.minutes || 300 }} --intervalle 60
 
       - name: Conserver le portefeuille et le journal
-        # Sans "set -e" et sans rebase, un push refuse passait inapercu : le
-        # workflow restait vert alors que rien n'etait sauvegarde. On veut
-        # l'inverse : si la sauvegarde echoue, le run doit devenir rouge.
+        if: always()
         run: |
           set -e
           git config user.name "robot-memoire"
           git config user.email "robot@users.noreply.github.com"
-          # Le journal n'existe qu'apres le premier message de Raas.
-          # git add refuse un fichier absent, donc on n'ajoute que l'existant.
           for f in portefeuille_agence_rg.json demo_raas_traites.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
