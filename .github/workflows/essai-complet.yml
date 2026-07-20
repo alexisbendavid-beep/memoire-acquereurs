@@ -1,0 +1,35 @@
+# L'essai de bout en bout : vocal reel -> 59 annonces reelles.
+#
+# Ne s'execute qu'a la demande, et n'envoie AUCUN mail. Le rapport visuel
+# est recuperable en piece jointe du run. C'est fait pour regarder ce que
+# la machine produit avant que quiconque le recoive.
+name: Essai complet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  essai:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rafraichir le portefeuille si besoin
+        run: python aspirer_portefeuille.py --pause 0.4 --si-plus-vieux-que 12
+
+      - name: Vocal reel, portefeuille reel
+        env:
+          FOURNISSEUR_IA: groq
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python essai_complet.py
+
+      - name: Recuperer le rapport
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultat-essai
+          path: resultat_essai.html
