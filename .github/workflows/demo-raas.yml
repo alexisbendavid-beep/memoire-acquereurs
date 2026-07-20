@@ -54,7 +54,11 @@ jobs:
           set -e
           git config user.name "robot-memoire"
           git config user.email "robot@users.noreply.github.com"
-          git add -A portefeuille_agence_rg.json demo_raas_traites.json
+          # Le journal n'existe qu'apres le premier message de Raas.
+          # git add refuse un fichier absent, donc on n'ajoute que l'existant.
+          for f in portefeuille_agence_rg.json demo_raas_traites.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           if git diff --staged --quiet; then
             echo "Rien de nouveau a sauvegarder."
           else
