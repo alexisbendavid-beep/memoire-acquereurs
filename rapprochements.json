@@ -1,0 +1,74 @@
+[
+  {
+    "score": 94,
+    "acquereur": "Jean Vasseur",
+    "ref_bien": "VAU-2026-114",
+    "verdict": "Correspondance exceptionnelle sur le critere decisif, jamais filtrable",
+    "declencheur": "Accès immédiat à pied à un bois",
+    "preuve_annonce": "Le fond du jardin donne directement sur le bois : le portillon ouvre sur les sentiers de la forêt de Fausses-Reposes",
+    "rappel_verbatim": "il voulait pouvoir sortir de chez lui et être dans les bois en cinq minutes à pied. Une lisière de forêt, c'est le mot qu'il a employé",
+    "message_agent": "Rappelez Jean Vasseur. Le 12 allée des Cèdres à Vaucresson a un portillon qui ouvre sur la forêt de Fausses-Reposes. Il cherchait exactement ça en mars pour promener son labrador le matin. Budget, maison, 4 chambres : tout colle.",
+    "reserves": ["Cuisine des années 90 à rafraîchir, mais il avait dit qu'il la referait de toute façon"],
+    "anciennete_besoin_jours": 128
+  },
+  {
+    "score": 91,
+    "acquereur": "Famille Ricci",
+    "ref_bien": "GAR-2026-097",
+    "verdict": "Repond aux trois besoins qualitatifs simultanement",
+    "declencheur": "École primaire à pied en moins de 10 minutes",
+    "preuve_annonce": "L'école primaire Pasteur est à 3 minutes à pied et la gare de Garches-Marnes-la-Coquette à 7 minutes",
+    "rappel_verbatim": "madame ne voulait plus prendre la voiture le matin, elle veut pouvoir les emmener à pied",
+    "message_agent": "Rappelez les Ricci. Le 8 rue des Écoles à Garches est à 3 minutes à pied de l'école Pasteur, et la gare est à 7 minutes pour monsieur qui va à La Défense. 4e étage, très lumineux, aucun vis-à-vis : c'est précisément ce qui avait coincé rue de Suresnes.",
+    "reserves": [],
+    "anciennete_besoin_jours": 109
+  },
+  {
+    "score": 90,
+    "acquereur": "Mme Ouazana",
+    "ref_bien": "COU-2026-071",
+    "verdict": "Coche tous les criteres d'investissement, y compris le risque ecarte",
+    "declencheur": "Louabilité immédiate et absence de travaux votés",
+    "preuve_annonce": "loué actuellement 1 380 euros charges comprises, bail en cours. Copropriété saine, aucun travaux voté en assemblée",
+    "rappel_verbatim": "ce qui l'intéresse c'est que ce soit loué le douze du mois, et pas de copropriété avec des travaux votés",
+    "message_agent": "Rappelez Madame Ouazana. Le 41 rue Victor Hugo à Courbevoie est déjà loué avec bail en cours, aucun travaux voté, rentabilité supérieure à 4 pour cent. C'est son secteur, elle y a déjà deux biens.",
+    "reserves": [],
+    "anciennete_besoin_jours": 51
+  },
+  {
+    "score": 88,
+    "acquereur": "M. et Mme Delaunay",
+    "ref_bien": "SCL-2026-088",
+    "verdict": "La contrainte familiale non négociable est levee par la localisation",
+    "declencheur": "Moins de 20 minutes de la mère de madame",
+    "preuve_annonce": "23 boulevard Sénard, 92210 Saint-Cloud. Rare meulière de 1912 entièrement préservée. Jardin paysager de 900 m2 avec arbres centenaires et potager",
+    "rappel_verbatim": "la mère de madame est à Saint-Cloud, ils veulent pouvoir être chez elle en moins de vingt minutes, c'est non négociable",
+    "message_agent": "Rappelez les Delaunay. La meulière de 1912 du boulevard Sénard est à Saint-Cloud même, donc à quelques minutes de la mère de madame. Jardin de 900 m2 avec potager pour ses plantations, et le cachet qu'ils cherchaient depuis 18 mois.",
+    "reserves": [],
+    "anciennete_besoin_jours": 83
+  },
+  {
+    "score": 86,
+    "acquereur": "Sophie Marchand",
+    "ref_bien": "VDA-2026-102",
+    "verdict": "La lumière et l'extérieur, ses deux conditions de travail, sont reunis",
+    "declencheur": "Pièce transformable en bureau et terrasse plein sud",
+    "preuve_annonce": "deux chambres dont une transformable en bureau. Terrasse de 14 m2 plein sud, très lumineuse toute la journée. Rue résidentielle sans passage",
+    "rappel_verbatim": "il lui faut une pièce en plus avec de la lumière, elle ne peut pas travailler dans le noir, et un extérieur parce qu'elle ne veut plus descendre dans la rue",
+    "message_agent": "Rappelez Sophie Marchand. Le 5 rue de Marnes à Ville-d'Avray est à 762 000, dans son budget. Une des deux chambres est transformable en bureau, terrasse de 14 m2 plein sud lumineuse toute la journée, et la rue est sans passage.",
+    "reserves": ["762 000 €, il ne reste que 18 000 € de marge sur son plafond"],
+    "anciennete_besoin_jours": 70
+  },
+  {
+    "score": 31,
+    "acquereur": "Jean Vasseur",
+    "ref_bien": "GAR-2026-103",
+    "verdict": "REJETE malgre une correspondance parfaite sur les criteres filtrables",
+    "declencheur": "Aucun. Les deux rédhibitoires sont declenches",
+    "preuve_annonce": "Maison sur avenue passante, à moderniser entièrement : électricité, plomberie et isolation à reprendre",
+    "rappel_verbatim": "pas de gros travaux de structure, il n'a ni le temps ni l'envie. Ce qui compte c'est le calme et la verdure",
+    "message_agent": "Ne pas proposer à Jean Vasseur. Un filtre classique aurait sorti ce bien : maison, 4 chambres, 1 180 000 € dans son budget. Mais l'avenue passante contredit sa recherche de calme et la rénovation complète est un rédhibitoire explicite.",
+    "reserves": ["Le filtre structuré de n'importe quel logiciel aurait proposé ce bien à tort"],
+    "anciennete_besoin_jours": 128
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "acquereur": "Jean Vasseur",
+    "date_echange": "2026-03-14",
+    "type_bien": "Maison",
+    "budget_min": 1200000,
+    "budget_max": 1300000,
+    "chambres_min": 4,
+    "secteurs": [],
+    "criteres_durs": ["Maison", "4 chambres minimum", "Budget 1 200 000 a 1 300 000 EUR"],
+    "criteres_qualitatifs": [
+      {
+        "besoin": "Acces immediat a pied a un bois ou une foret",
+        "verbatim": "il voulait pouvoir sortir de chez lui et etre dans les bois en cinq minutes a pied. Une lisiere de foret, c'est le mot qu'il a employe",
+        "pourquoi": "Il promene son labrador Ulysse tous les matins a 6h30"
+      },
+      {
+        "besoin": "Calme et verdure, rupture avec l'urbain",
+        "verbatim": "il me l'a repete deux fois, c'est le calme et la verdure. Il vient de Boulogne, il en a marre du beton",
+        "pourquoi": "Quitte un environnement tres urbain"
+      },
+      {
+        "besoin": "Pouvoir accueillir enfants et petits-enfants le week-end",
+        "verbatim": "les enfants sont partis mais ils reviennent tous les week-ends avec les petits",
+        "pourquoi": "Justifie les 4 chambres au-dela du besoin quotidien"
+      }
+    ],
+    "redhibitoires": ["Gros travaux de structure"],
+    "maturite": "Vendeur de son appartement a Boulogne, pas presse mais va vite sur le bien ideal",
+    "note_agent": "La cuisine lui est indifferente, il la refera",
+    "source": "2026-03-14_jean_vasseur.txt"
+  },
+  {
+    "acquereur": "Famille Ricci",
+    "date_echange": "2026-04-02",
+    "type_bien": "Appartement",
+    "budget_min": null,
+    "budget_max": 950000,
+    "chambres_min": 3,
+    "secteurs": [],
+    "criteres_durs": ["Appartement 4 pieces", "Budget max 950 000 EUR", "Exterieur meme petit", "Etage eleve"],
+    "criteres_qualitatifs": [
+      {
+        "besoin": "Ecole primaire accessible a pied en moins de 10 minutes",
+        "verbatim": "madame m'a dit qu'elle ne voulait plus prendre la voiture le matin. Elle veut pouvoir les emmener a pied",
+        "pourquoi": "Deux enfants de 6 et 9 ans, refus de la voiture le matin"
+      },
+      {
+        "besoin": "Transilien proche pour La Defense",
+        "verbatim": "Monsieur travaille a La Defense, il lui faut le transilien pas trop loin",
+        "pourquoi": "Trajet domicile travail quotidien"
+      },
+      {
+        "besoin": "Fin du vis-a-vis et de la penombre",
+        "verbatim": "ils sont au rez-de-chaussee actuellement et ils en ont assez du vis-a-vis",
+        "pourquoi": "Ont refuse le 3 pieces rue de Suresnes juge trop sombre"
+      }
+    ],
+    "redhibitoires": ["Plus de 10 minutes a pied d'une ecole primaire", "Logement sombre"],
+    "maturite": "Accord de principe pour le pret",
+    "note_agent": "Visite rue de Suresnes non concluante, trop sombre",
+    "source": "2026-04-02_famille_ricci.txt"
+  },
+  {
+    "acquereur": "M. et Mme Delaunay",
+    "date_echange": "2026-04-28",
+    "type_bien": "Maison",
+    "budget_min": 1800000,
+    "budget_max": 2000000,
+    "chambres_min": null,
+    "secteurs": [],
+    "criteres_durs": ["Maison de caractere", "Jardin indispensable", "Budget 1 800 000 a 2 000 000 EUR"],
+    "criteres_qualitatifs": [
+      {
+        "besoin": "Moins de 20 minutes en voiture de Saint-Cloud",
+        "verbatim": "la mere de madame est a Saint-Cloud, elle a quatre-vingt-trois ans et elle est seule. Ils veulent pouvoir etre chez elle en moins de vingt minutes. C'est non negociable",
+        "pourquoi": "Parent age isole, contrainte familiale imperative"
+      },
+      {
+        "besoin": "Bien ancien avec du cachet, pierre ou meuliere",
+        "verbatim": "ils voulaient une maison avec une ame. Pierre de taille, meuliere, ce genre de chose",
+        "pourquoi": "Refus explicite du neuf, recherche affective"
+      },
+      {
+        "besoin": "Jardin exploitable pour le jardinage",
+        "verbatim": "Jardin indispensable, madame jardine",
+        "pourquoi": "Pratique personnelle regulière de madame"
+      }
+    ],
+    "redhibitoires": ["Construction neuve", "Absence de jardin"],
+    "maturite": "Vendent leur maison de Marnes, solvables, cherchent depuis 18 mois sans coup de coeur",
+    "note_agent": "Patients mais exigeants, rien ne les a fait vibrer jusqu'ici",
+    "source": "2026-04-28_delaunay.txt"
+  },
+  {
+    "acquereur": "Sophie Marchand",
+    "date_echange": "2026-05-11",
+    "type_bien": "Appartement",
+    "budget_min": null,
+    "budget_max": 780000,
+    "chambres_min": 2,
+    "secteurs": [],
+    "criteres_durs": ["2 ou 3 pieces", "Budget max 780 000 EUR strict", "Terrasse ou grand balcon"],
+    "criteres_qualitatifs": [
+      {
+        "besoin": "Piece supplementaire ou coin bureau tres lumineux",
+        "verbatim": "elle bosse de chez elle cinq jours sur sept, il lui faut une piece en plus ou un vrai coin bureau avec de la lumiere. Elle ne peut pas travailler dans le noir",
+        "pourquoi": "Graphiste en teletravail quasi permanent, la lumiere est un outil de travail"
+      },
+      {
+        "besoin": "Exterieur prive accessible directement",
+        "verbatim": "elle veut absolument un exterieur, terrasse ou grand balcon, parce qu'elle fume et qu'elle ne veut plus descendre dans la rue",
+        "pourquoi": "Confort quotidien, evite de descendre plusieurs fois par jour"
+      },
+      {
+        "besoin": "Calme, hors axe passant",
+        "verbatim": "Le calme est important aussi, pas sur un axe passant",
+        "pourquoi": "Travaille a domicile toute la journee"
+      }
+    ],
+    "redhibitoires": ["Depassement du budget", "Logement sombre", "Axe passant"],
+    "maturite": "Premier achat, apport familial, dossier propre",
+    "note_agent": "Vraiment au taquet sur 780 000, ne pas proposer au-dessus",
+    "source": "2026-05-11_sophie_marchand.txt"
+  },
+  {
+    "acquereur": "Mme Ouazana",
+    "date_echange": "2026-05-30",
+    "type_bien": "Appartement",
+    "budget_min": null,
+    "budget_max": 400000,
+    "chambres_min": null,
+    "secteurs": [],
+    "criteres_durs": ["Studio ou 2 pieces", "Budget max 400 000 EUR", "Rendement brut 4 pour cent minimum", "Proximite transports"],
+    "criteres_qualitatifs": [
+      {
+        "besoin": "Louabilite immediate et continue",
+        "verbatim": "ce qui l'interesse c'est que ce soit loue le douze du mois",
+        "pourquoi": "Investisseuse pure, la vacance locative est le seul vrai risque"
+      },
+      {
+        "besoin": "Aucune charge exceptionnelle a venir",
+        "verbatim": "pas de copropriete avec des travaux votes, elle ne veut pas de mauvaise surprise sur les appels de fonds",
+        "pourquoi": "Protege la rentabilite nette"
+      }
+    ],
+    "redhibitoires": ["Travaux votes en assemblee", "Rendement inferieur a 4 pour cent"],
+    "maturite": "Deja proprietaire de deux biens a Courbevoie, investisseuse aguerrie",
+    "note_agent": "Indifferente au charme, a la vue et au calme",
+    "source": "2026-05-30_ouazana.txt"
+  }
+]
